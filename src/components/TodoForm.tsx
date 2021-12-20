@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
-interface ITodo {
-  id: number;
-  text: string;
-  completed: boolean;
-}
+import { ITodo } from '../context';
 
 const Form = styled.form`
   margin: 20px 0 40px 0;

@@ -1,20 +1,10 @@
-import { useState } from 'react';
-import TodoItem from './components/TodoItem';
-import TodoForm from './components/TodoForm'
+import { TodoItem, TodoForm } from './components';
+import { ITodo } from './context'
+import { useTodo } from './hooks/usetodo';
 
-interface ITodo {
-  id: number;
-  text: string;
-  completed: boolean;
-}
-
-const DUMMY_TODOS: ITodo[] = [
-  {id: 1, text: 'Hello TypeScript', completed: false},
-  {id: 2, text: 'Testing TypeScript', completed: true}
-]
 
 function App() {
-  const [todos, setTodos] = useState<ITodo[]>(DUMMY_TODOS)
+  const {todos, setTodos} = useTodo() 
 
   const completedHandler = (id: number) => {
     const updatedTodos = todos.map(todo => { 

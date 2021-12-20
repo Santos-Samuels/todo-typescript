@@ -1,10 +1,5 @@
 import styled from "styled-components";
-
-interface ITodo {
-  id: number;
-  text: string;
-  completed: boolean;
-}
+import { ITodo } from '../context';
 
 const Todo = styled.article<{ completed: boolean }>`
   border: solid 1px rgba(5, 4, 4, 0.1);
