@@ -28,12 +28,18 @@ const Form = styled.form`
   & button:hover {
     background-color: #76c530;
   }
+
+  & p {
+    color: red;
+    text-align: center;
+    font-size: 13px;
+  }
 `;
 
 const TodoForm: React.FC = (props) => {
   const {addTodo} = useTodo()
   const [enteredTodo, setEnteredTodo] = useState("");
-  
+  const [validationTodo, setValidationTodo] = useState(true)
 
   const formHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -46,7 +52,12 @@ const TodoForm: React.FC = (props) => {
       });
 
       setEnteredTodo("");
+      setValidationTodo(true)
+
+      return
     }
+
+    setValidationTodo(false)
   };
 
   return (
@@ -60,6 +71,8 @@ const TodoForm: React.FC = (props) => {
         placeholder="Enter a new todo"
       />
       <button>Add</button>
+
+      { (!validationTodo && !enteredTodo) && <p>Can't add empety todo!</p> }
     </Form>
   );
 };
