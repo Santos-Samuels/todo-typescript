@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ITodo } from '../context';
+import { useTodo } from "../hooks/usetodo";
 
 const Todo = styled.article<{ completed: boolean }>`
   border: solid 1px rgba(5, 4, 4, 0.1);
@@ -30,9 +31,9 @@ const Todo = styled.article<{ completed: boolean }>`
 
 const TodoItem: React.FC<{
   todo: ITodo;
-  completedHandler: (id: number) => void;
-  deleteTodo: (id: number) => void;
 }> = (props) => {
+  const {completeTodo, removeTodos} = useTodo()
+
   return (
     <Todo
       completed={props.todo.completed}
@@ -40,8 +41,8 @@ const TodoItem: React.FC<{
       <li>{props.todo.text}</li>
       
       <div>
-        <span onClick={() => props.completedHandler(props.todo.id)}>{props.todo.completed ? 'uncheck' : 'check'}</span>
-        <span onClick={() => props.deleteTodo(props.todo.id)}>delete</span>
+        <span onClick={() => completeTodo(props.todo)}>{props.todo.completed ? 'uncheck' : 'check'}</span>
+        <span onClick={() => removeTodos(props.todo)}>delete</span>
       </div>
     </Todo>
   );

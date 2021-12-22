@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ITodo } from '../context';
+import { useTodo } from "../hooks/usetodo";
 
 const Form = styled.form`
   margin: 20px 0 40px 0;
@@ -30,14 +30,16 @@ const Form = styled.form`
   }
 `;
 
-const TodoForm: React.FC<{ addTodo: (todo: ITodo) => void }> = (props) => {
+const TodoForm: React.FC = (props) => {
+  const {addTodo} = useTodo()
   const [enteredTodo, setEnteredTodo] = useState("");
+  
 
   const formHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (enteredTodo.trim()) {
-      props.addTodo({
+      addTodo({
         id: Date.now(),
         text: enteredTodo,
         completed: false,
