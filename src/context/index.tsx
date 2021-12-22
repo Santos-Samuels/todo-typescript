@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { todoReducer, ActionsType } from "../store/reducer";
+import { todoReducer, ActionsType } from "@store/reducer/index";
 
 export interface ITodo {
   id: number;

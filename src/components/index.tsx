@@ -1,5 +1,5 @@
-import TodoItem from "./TodoItem";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList"
+import TodoItem from "@components/TodoItem";
+import TodoForm from "@components/TodoForm";
+import TodoList from "@components/TodoList"
 
 export { TodoItem, TodoForm, TodoList }

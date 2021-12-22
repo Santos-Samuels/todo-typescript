@@ -1,4 +1,4 @@
-import { TodoList, TodoForm } from './components';
+import { TodoList, TodoForm } from '@components/index';
 
 
 function App() {

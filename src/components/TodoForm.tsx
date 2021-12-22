@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useTodo } from "../hooks/usetodo";
+import { useTodo } from "@hooks/usetodo";
 
 const Form = styled.form`
   margin: 20px 0 40px 0;

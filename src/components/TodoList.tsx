@@ -1,4 +1,4 @@
-import { useTodo } from '../hooks/usetodo';
+import { useTodo } from '@hooks/usetodo';
 import { TodoItem } from './';
 
 

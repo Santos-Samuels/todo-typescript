@@ -1,4 +1,4 @@
-import { ITodo } from "../../context";
+import { ITodo } from "@context/index";
 
 export enum ActionsType {
   ADD = 'ADD',

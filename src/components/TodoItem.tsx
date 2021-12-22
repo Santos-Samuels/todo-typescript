@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ITodo } from '../context';
-import { useTodo } from "../hooks/usetodo";
+import { ITodo } from '@context/index';
+import { useTodo } from "@hooks/usetodo";
 
 const Todo = styled.article<{ completed: boolean }>`
   border: solid 1px rgba(5, 4, 4, 0.1);
