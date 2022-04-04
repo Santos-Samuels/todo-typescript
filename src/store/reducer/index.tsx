@@ -13,12 +13,12 @@ export interface ReducerActions {
 
 
 export const todoReducer = (state: ITodo[], action: ReducerActions) => {
-  if (action.type == ActionsType.ADD) {
+  if (action.type === ActionsType.ADD) {
     const newTodo = action.payload
     return [newTodo, ...state]
   }
 
-  if (action.type == ActionsType.COMPLETE) {
+  if (action.type === ActionsType.COMPLETE) {
     const updatedTodos = state.map(todo => { 
       if (todo.id === action.payload.id) return { ...todo, completed: !todo.completed }
       
@@ -28,7 +28,7 @@ export const todoReducer = (state: ITodo[], action: ReducerActions) => {
     return updatedTodos
   }
 
-  if (action.type == ActionsType.REMOVE) {
+  if (action.type === ActionsType.REMOVE) {
     const updatedTodos = state.filter(todo => {
       if (todo.id !== action.payload.id) return todo
         
